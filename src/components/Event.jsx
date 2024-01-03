@@ -1,50 +1,81 @@
-import React, { useEffect, useState } from 'react'
-import event from '../data/event'
-import people from '../data/people'
+import React, { useEffect, useState } from "react";
+import event from "../data/event";
+import people from "../data/people";
+import Layout from "../common/Layout";
+import { useApiData } from "./ApiDataProvider";
+import moment from "moment/moment";
 
 export const Event = () => {
+  const { data } = useApiData();
 
-  const peopleData = people
+  const days = data?.days?.map((day) => ({
+    id: day?._id,
+    img: day?.image?.image?.fileUrl,
+    heading: day?.title,
+    location: day?.location,
+    time: day?.dateTime,
+    paragraph: day?.description,
+  }));
 
+  console.log(days, "days");
 
-  const [gender, setGender] = useState('male')
-  const [filteredPeople, setFilteredPeople] = useState([])
+  const peopleData = people;
 
-  useEffect(()=>{
-    const data = peopleData.filter(item=>item.gender === gender)
-    setFilteredPeople(data)
-  }, [gender])
+  const [gender, setGender] = useState("male");
+  const [filteredPeople, setFilteredPeople] = useState([]);
 
-  console.log(filteredPeople, "filtered people")
+  useEffect(() => {
+    const data = peopleData.filter((item) => item.gender === gender);
+    setFilteredPeople(data);
+  }, [gender]);
+
+  console.log(filteredPeople, "filtered people");
 
   return (
-    <div id='event'>
-    <div className='flex flex-col items-center tablet:ml-[35rem] laptop:ml-[0rem] laptop1:ml-[50rem] mobileM:ml-[42rem] mobileS:ml-[40rem] mobileS:mt-[10rem] tablet:mt-[0rem]' >
-       <div className='border-2 h-[3rem] bg-black mt-[5rem] '>
-
-</div>
-      <div className=' flex items-center justify-center mb-[2rem]  bg-gray-100 tablet:h-[4rem] tablet:w-[20rem] border-2 mobileS:h-[7rem] mobileS:w-[40rem] '>
-       
-      <h1 className='tablet:w-[20rem]  tablet:text-2xl  text-center font-custom text-gray-400 mobileS:text-5xl mobileS:w-[30rem]'>Wedding Event</h1>
+    <div
+      id="event"
+      className="flex flex-col items-center justify-center pt-[6rem] overflow-hidden"
+    >
+      <div className=" flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem] ">
+        <h1 className="text-xl font-display ">WEDDING EVENT</h1>
       </div>
-{event?.map((event,index)=>{
-return<div className='tablet:flex tablet:items-center tablet:justify-center'>
-  <img className='tablet:h-[16rem] mt-[3rem] mobileS:h-[30rem] mobileS:w-[90rem] tablet:w-[20rem] ' src={event?.img}/>
-  <div className='ml-[2rem]'>
-    <h1 className='font-serif tablet:text-xl mobileS:text-5xl font-semibold mb-[1rem] tablet:mt-[3rem] mobileS:mt-[2rem]'>{event?.heading}</h1>
-    <p className='text-gray-600 tablet:text-sm mobileS:text-4xl mb-[0.2rem] '>{event?.location}</p>
-    <p className='text-gray-600 tablet:text-sm mobileS:text-4xl '>{event?.time}</p>
-    <p className='tablet:w-[20rem] mt-[1rem] text-gray-500 leading-[1.8rem] tablet:text-sm mobileS:text-4xl mobileS:w-[55rem]  '>{event?.paragraph}</p>
-    <p className='mt-[1rem] tablet:text-lg  text-green-700 font-semibold mobileS:text-5xl '>See location</p>
+      <Layout style={{ height: "fit-content" }}>
+        {days?.map((event, index) => {
+          return (
+            <div className=" flex tablet:flex-row mobileS:flex-col mobileM:flex-col gap-5 pt-[3rem] items-center justify-center ">
+              <img
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                src={event?.img}
+                className="max-h-[20rem] w-[20rem] rounded-[1rem] shadow-md object-cover  "
+              />
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                className="flex flex-col justify-center"
+              >
+                <h1 className="font-display text-emerald-900 font-semibold">
+                  {event?.heading}
+                </h1>
+                <h1 className="font-display pt-[0.5rem] text-sm text-gray-800">
+                  {event?.location}
+                </h1>
+                <div className="flex items-center gap-3">
+                  <h1 className="font-display text-sm text-gray-800">
+                    {moment(event?.time).format("YYYY-MM-DD")}
+                  </h1>
+                  <h1 className="font-display text-sm text-gray-800">
+                    {moment(event?.time).format("HH:mm A")}
+                  </h1>
+                </div>
+                <h1 className="font-display pt-[1rem] max-w-[30rem] text-gray-800">
+                  {event?.paragraph}
+                </h1>
+              </div>
+            </div>
+          );
+        })}
+      </Layout>
     </div>
-  </div>
-})}
-
-
-
-
-
-    </div>
-    </div>
-  )
-}
+  );
+};

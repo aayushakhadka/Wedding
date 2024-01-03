@@ -1,68 +1,84 @@
 import React from "react";
+import { useState } from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import QRCode from "react-qr-code";
+import { useApiData } from "./ApiDataProvider";
 
 export const Footer = () => {
+  const { eventId } = useApiData();
+
+  const [qrValue, setQrValue] = useState(""); // State to store the QR code value
+
+  const handleChange = (e) => {
+    setQrValue(e.target.value); // Update the QR code value on input change
+  };
+
   return (
-    <>
-      <div className="bg-newlyweds bg-center bg-cover h-[33rem] mb-[0rem]  tablet:w-[170%] laptop:w-[100%] mobileS:w-[80rem] mobileM:w-[83rem]">
-        <div className="bg-black h-[33rem] opacity-75">
-          <div className=" flex flex-col justify-center items-center h-[30rem]">
-            <h1 className="text-white text-5xl font-custom w-[30rem] text-center tracking-wide">
-              Forever and always Our Love
+    <div>
+      <div className=" bg-photo bg-cover max-w-full">
+        <div className="bg-black opacity-75 p-[4rem]">
+          <div className=" flex flex-col justify-center items-center gap-8">
+            <h1 className="text-white text-5xl font-display text-center tracking-wide ">
+              Share your memories
             </h1>
-            <h3 className="text-white mt-[3rem] mobileS:text-4xl tablet:text-md tracking-wider">
+            {/* <h3 className="text-white font-display ">
               -Mick[The Groom]
-            </h3>
+            </h3> */}
+              <div className="flex ">
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <QRCode
+              value={`${process.env.REACT_APP_F_BASE_URL}/memories/${eventId}`}
+              size={200}
+            />
           </div>
         </div>
+          </div>
+        
+        </div>
+        
       </div>
-      <div className="laptop:h-[5rem] mobileS:h-[15rem] flex flex-row items-center justify-between ">
-        <div className="ml-[3rem]">
-          <span className="text-black mobileS:text-5xl laptop:text-lg mobileS:w-[30rem] tablet:text-xl ">
-            Copyright © 2019 All Rights Reserved by
-          </span>
-          <a
-            className="text-lg font-semibold ml-[0.5rem] text-sky-700 mobileS:text-5xl laptop:text-lg mobileS:mr-[20rem] laptop:mr-[0rem] tablet:text-xl "
-            target="_blank"
-            href="https://apptechnologies.co/"
-          >
-            App Technologies
+      <div className="flex items-center justify-around mobileS:flex-col mobileM:flex-col tablet:flex-row min-h-[5rem]">
+        <p className="text-black flex mobileS:flex-col mobileM: flex-col tablet:flex-row items-center gap-2 mobileM:pl-[0.7rem] tablet:pl-[0rem]">
+          Designed & Developed By
+          <a className=" " target="_blank" href="https://apptechnologies.co/">
+            <span className=" text-cyan-600 tracking-wide">
+              App Technologies
+            </span>
           </a>
-        </div>
-        <div className="flex items-center relative  ">
-          <span className="laptop:h-[2rem] laptop:w-[2rem] mobileS:h-[7rem] mobileS:w-[7rem] bg-sky-600 rounded-full flex items-center justify-center mr-[1rem] mobileS:ml-[4rem]  laptop1:ml-[50rem] tablet:ml-[25rem] laptop:ml-[0rem] tablet:h-[4rem] tablet:w-[4rem]">
-            <a 
-            target="_blank"
-            href="https://www.facebook.com/apptechnologies1">
-              <FaFacebookF className="laptop:h-[1rem] laptop:w-[1rem] mr-[1rem] mobileS:h-[3rem] mobileS:w-[3rem] text-white rounded-full ml-[1rem] flex items-center justify-center tablet:h-[2rem] tablet:w-[2rem] " />
+        </p>
+
+        <div className="flex justify-center relative gap-3">
+          <span className="bg-cyan-600 rounded-full h-[2.5rem] w-[2.5rem]">
+            <a target="_blank" href="https://www.facebook.com/apptechnologies1">
+              <FaFacebookF className=" flex items-center translate-x-3 translate-y-3 text-white" />
             </a>
           </span>
-          <span className=" laptop:h-[2rem] laptop:w-[2rem] mobileS:h-[7rem] mobileS:w-[7rem] bg-sky-600 rounded-full flex items-center justify-center mr-[1rem] tablet:h-[4rem] tablet:w-[4rem]">
-            <a 
-            target="_blank"
-            href="https://twitter.com/AppTechnologies">
-              <FaTwitter className=" laptop:ml-[-0.4rem] laptop:mt-[-0.5rem] laptop:h-[1rem] laptop:w-[1rem]  mobileS:h-[3rem] mobileS:w-[3rem] mobileS:ml-[-1rem] mobileS:mt-[-1rem] text-white absolute tablet:h-[2rem] tablet:w-[2rem] " />
+          <span className="bg-cyan-600 rounded-full h-[2.5rem] w-[2.5rem] ">
+            <a target="_blank" href="https://twitter.com/AppTechnologies">
+              <FaTwitter className=" flex items-center translate-x-3 translate-y-3 text-white " />
             </a>
           </span>
-          <span className=" laptop:h-[2rem] laptop:w-[2rem] mobileS:h-[7rem] mobileS:w-[7rem] bg-sky-600 rounded-full flex items-center justify-center mr-[1rem] tablet:h-[4rem] tablet:w-[4rem]">
+          <span className="bg-cyan-600 rounded-full h-[2.5rem] w-[2.5rem] ">
             <a
-            target="_blank"
-            href="https://www.instagram.com/apptechnologies1/">
-              <FaInstagram className="laptop:h-[1rem] laptop:w-[1rem]  mobileS:h-[3rem] mobileS:w-[3rem] mr-[rem] text-white tablet:h-[2rem] tablet:w-[2rem]  " />
+              target="_blank"
+              href="https://www.instagram.com/apptechnologies1/"
+            >
+              <FaInstagram className=" flex items-center translate-x-3 translate-y-3 text-white " />
             </a>
           </span>
-          <span className="laptop:h-[2rem] laptop:w-[2rem] mobileS:h-[7rem] mobileS:w-[7rem] bg-sky-600 rounded-full flex items-center justify-center  laptop:mr-[10rem] tablet:h-[4rem] tablet:w-[4rem]">
+          <span className="bg-cyan-600 rounded-full h-[2.5rem] w-[2.5rem]">
             <a
-            target="_blank"
-            href="https://www.linkedin.com/company/app-technologies-pvt-ltd/">
-              <FaLinkedinIn className="laptop:h-[1rem] laptop:w-[1rem] mobileS:h-[3rem] mobileS:w-[3rem] text-white tablet:h-[2rem] tablet:w-[2rem] " />
+              target="_blank"
+              href="https://www.linkedin.com/company/app-technologies-pvt-ltd/"
+            >
+              <FaLinkedinIn className="flex items-center translate-x-3 translate-y-3 text-white " />
             </a>
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 };
