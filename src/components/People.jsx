@@ -51,16 +51,16 @@ export const People = () => {
         <div className="grid laptop1:grid-cols-3 gap-7 pt-[3rem] tablet:grid-cols-2">
           {contact?.map((friend, index) => {
             return (
-              <div className="group  border-gray-400 border-[1px] shadow-md  "
+              <div className="group  border-gray-400 shadow-lg "
               data-aos='zoom-in'
               data-aos-duration='1500'>
                 <div className=" overflow-hidden  ">
                   <img
-                    className="group-hover:scale-125 duration-150 group-hover:border-red-400 group-hover:rounded-t-[1rem] contrast-75 group-hover:contrast-125 w-full h-[20rem]"
+                    className="group-hover:scale-125 duration-150 group-hover:border-red-400 group-hover:rounded-t-[1rem] contrast-75 group-hover:contrast-125 w-full h-[20rem] object-cover"
                     src={friend?.image}
                   />
                 </div>
-                <div className="p-[1.2rem] border-gray-400 border-b-[1px] ">
+                <div className="p-[1rem] border-gray-400  ">
                   <h1 className="flex font-display tracking-[1px] leading-7">Name: {friend?.name}</h1>
                  
                   {/* <h1 className="font-display text-black tracking-[0.1px]">
@@ -69,8 +69,8 @@ export const People = () => {
                   <h1 className="font-display text-black tracking-[1px] leading-7">
                     Desgination: {friend?.relation}
                   </h1>
-                  <h1 className="font-display text-black tracking-[1px] leading-7">
-                    Number: {friend?.phone}
+                  <h1 className="font-display text-black tracking-[0.8px] leading-7">
+                    Number:<a href={`tel:${friend?.phone}`}> {friend?.phone}</a>
                   </h1>
                 </div>
               </div>

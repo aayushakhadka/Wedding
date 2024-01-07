@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../common/Loading";
 
 const ApiDataContext = createContext(null);
 
@@ -29,6 +30,10 @@ export function ApiDataProvider({ children }) {
         });
     }
   }, [eventId]);
+
+  if (!apiData || apiData.length == 0) {
+    return <Loading />;
+  }
 
   return (
     <ApiDataContext.Provider value={apiData}>
