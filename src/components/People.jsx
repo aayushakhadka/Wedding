@@ -12,6 +12,7 @@ export const People = () => {
   const [filteredPeople, setFilteredPeople] = useState([]);
 
   const contact=data?.closeFriends.map((friend)=>({
+    id:friend?._id,
     image:friend?.image?.image?.fileUrl,
     name:friend?.name,
     relation:friend?.relation,
@@ -51,7 +52,7 @@ export const People = () => {
         <div className="grid laptop1:grid-cols-3 gap-7 pt-[3rem] tablet:grid-cols-2">
           {contact?.map((friend, index) => {
             return (
-              <div className="group  border-gray-400 shadow-lg "
+              <div key={index} className="group  border-gray-400 shadow-lg "
               data-aos='zoom-in'
               data-aos-duration='1500'>
                 <div className=" overflow-hidden  ">

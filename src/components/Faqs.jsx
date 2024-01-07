@@ -25,26 +25,42 @@ export const Faqs = () => {
     <div id="faqs">
       <Layout style={{ height: "fit-content" }}>
         <div className="flex items-center justify-center pt-[6rem] ">
-        <h1 className="font-display text-xl flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">FAQS</h1>
-      </div>
+          <h1 className="font-display text-xl flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">
+            FAQS
+          </h1>
+        </div>
         <div className="pt-[3rem]">
           {faqData?.map((faq, index) => (
             <div className="flex flex-col gap-2 font-display">
-              <div key={index} className=" rounded mb-2 p-3 border-[1px] border-gray-400" >
+              <div
+                key={index}
+                className=" rounded mb-2 p-3 border-[1px] border-gray-400"
+              >
                 <div
-                  className="flex justify-between items-center px-3 p-3 pt-4"
+                  className="flex justify-between items-center tablet:px-3 tablet:p-3 tablet:pt-4"
                   onClick={() => handleClick(index)}
                 >
-                  <h2 className="text-lg font-medium">{faq?.question}</h2>
+                  <h2 className="text-lg font-medium tablet:w-11/12">
+                    {faq?.question}
+                  </h2>
 
-                  {activeIndex === index ? (
-                    <MdKeyboardArrowDown size={25} />
-                  ) : (
-                    <MdKeyboardArrowUp size={25} />
-                  )}
+                  <div className="w-[3rem] h-auto text-center">
+                    {activeIndex === index ? (
+                     
+                      <MdKeyboardArrowDown
+                        className="mobileS:hidden mobileM:hidden text-xl"
+                        size={25}
+                      />
+                    ) : (
+                      <MdKeyboardArrowUp
+                        className="mobileS:hidden mobileM:hidden"
+                        size={25}
+                      />
+                    )}
+                  </div>
                 </div>
                 {activeIndex === index && (
-                  <div className="px-3">{faq?.answer}</div>
+                  <div className="tablet:px-3 mobileS:pt-2 mobileM:pt-2">{faq?.answer}</div>
                 )}
               </div>
             </div>

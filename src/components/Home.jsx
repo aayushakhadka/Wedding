@@ -23,7 +23,7 @@ export const Home = () => {
             {data?.groomName?.split(" ")?.[0]} &{" "}
             {data?.brideName?.split(" ")?.[0]}
           </h1>
-          <div className="bg-white tablet:w-[70%] laptop1:w-[40%] mobileM:w-[100%] h-[1px] mb-[1rem] flex"></div>
+          <div className="bg-white tablet:w-[70%] laptop1:w-[40%] mobileM:w-[92%] h-[1px] mb-[1rem] flex"></div>
           <h1
             data-aos="zoom-in"
             data-aos-duration="1500"
@@ -31,7 +31,7 @@ export const Home = () => {
           >
             WE'RE GETTING MARRIED
           </h1>
-          <div className="bg-white tablet:w-[70%] mobileM:w-[100%] laptop1:w-[40%] h-[1px] mt-[1rem] flex"></div>
+          <div className="bg-white tablet:w-[70%] mobileM:w-[92%] laptop1:w-[40%] h-[1px] mt-[1rem] flex"></div>
         </div>
       </div>
     </div>

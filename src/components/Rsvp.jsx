@@ -34,7 +34,6 @@ export const Rsvp = () => {
   };
 
   const acceptInvitation = async () => {
-    console.log(inputValue, "input value");
 
     try {
       setLoading(true);

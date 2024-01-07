@@ -17,7 +17,6 @@ export const Event = () => {
     paragraph: day?.description,
   }));
 
-  console.log(days, "days");
 
   const peopleData = people;
 
@@ -29,7 +28,6 @@ export const Event = () => {
     setFilteredPeople(data);
   }, [gender]);
 
-  console.log(filteredPeople, "filtered people");
 
   return (
     <div
@@ -42,7 +40,7 @@ export const Event = () => {
       <Layout style={{ height: "fit-content" }}>
         {days?.map((event, index) => {
           return (
-            <div className=" flex tablet:flex-row mobileS:flex-col mobileM:flex-col gap-5 pt-[3rem] items-center justify-center ">
+            <div key={index} className=" flex tablet:flex-row mobileS:flex-col mobileM:flex-col gap-5 pt-[3rem] items-center justify-center ">
               <img
                 data-aos="fade-right"
                 data-aos-duration="1500"

@@ -24,7 +24,6 @@ export const Memories = () => {
       setMemoriesImage((prev) => [...prev, file]);
     }
 
-    console.log(memoriesImage);
   };
 
   console.log(memoriesImage);
