@@ -136,7 +136,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 value={travelDetail.airline}
                 name="airline"
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
               {/* {errors.name && (
                 <span className=" flex flex-col text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -154,7 +154,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 name="flightNumber"
                 value={travelDetail.flightNumber}
-                className=" min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className=" min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
               {/* {errors.email && (
                 <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -173,7 +173,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 name="arrivalDateTime"
                 value={travelDetail.arrivalDateTime}
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
               {/* {errors.address && (
                 <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -190,7 +190,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 name="departureDateTime"
                 value={travelDetail.departureDateTime}
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
               {/* {errors.number && (
                 <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -209,7 +209,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 name="arrivalPlace"
                 value={travelDetail.arrivalPlace}
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
             </div>
             <div className="flex flex-col flex-[1] w-full">
@@ -221,7 +221,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 name="departurePlace"
                 value={travelDetail.departurePlace}
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
             </div>
           </div>
@@ -235,7 +235,7 @@ export const Traveldetails = () => {
                 onChange={handleSetTravelDetail}
                 name="email"
                 value={travelDetail.email}
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
             </div>
           </div>
@@ -258,7 +258,7 @@ export const Traveldetails = () => {
                 className="flex flex-col items-center px-4 py-6 w-full bg-white text-gray-700 rounded-[1rem] shadow tracking-wide cursor-pointer"
               >
                 <FiPlus />
-                <span className="text-base leading-normal">Select a file</span>
+                <span className="text-base leading-normal font-display">Select a file</span>
                 <input
                   onChange={handleSetTravelDetailImage}
                   type="file"

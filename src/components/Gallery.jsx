@@ -111,7 +111,7 @@ export const Gallery = () => {
         })}
       </div>
 
-      <div className="grid mobileS:grid-cols-1 mobileM:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 pt-[3rem] gap-3 w-[80%] flex-wrap">
+      <div className="grid mobileS:grid-cols-1 mobileM:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 pt-[1rem] gap-3 w-[80%] flex-wrap">
         {memories?.map((gallery, index) => {
           return (
             <div
@@ -139,7 +139,7 @@ export const Gallery = () => {
                         </div>
                       ) : (
                         <img
-                          className="w-full h-96 object-cover"
+                          className="w-full h-96 object-contain grid grid-cols-2"
                           src={img?.image?.fileUrl}
                         />
                       )}
@@ -147,11 +147,11 @@ export const Gallery = () => {
                   );
                 })}
               </Slider>
-              <div className="absolute flex flex-col bg-white bottom-0 w-full opacity-100  p-[0.5rem]">
-                <div className=" text-black px-[1rem] font-display  ">
+              <div className="absolute flex bg-gray-200 flex-col items-center justify-center bottom-0 w-full opacity-100 p-[0.5rem]">
+                <div className=" text-black px-[1rem] font-display text-sm  ">
                   Posted By: {gallery?.by}
                 </div>
-                <div className=" text-black px-[1rem] font-display ">
+                <div className=" text-black px-[1rem] font-display text-sm ">
                   Event: {gallery?.event}
                 </div>
               </div>

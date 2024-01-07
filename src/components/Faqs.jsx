@@ -30,9 +30,9 @@ export const Faqs = () => {
         <div className="pt-[3rem]">
           {faqData?.map((faq, index) => (
             <div className="flex flex-col gap-2 font-display">
-              <div key={index} className=" rounded mb-2 pt-4 border-[1px] border-gray-400" >
+              <div key={index} className=" rounded mb-2 p-3 border-[1px] border-gray-400" >
                 <div
-                  className="flex justify-between items-center p-2 pt-4"
+                  className="flex justify-between items-center px-3 p-3 pt-4"
                   onClick={() => handleClick(index)}
                 >
                   <h2 className="text-lg font-medium">{faq?.question}</h2>
@@ -44,7 +44,7 @@ export const Faqs = () => {
                   )}
                 </div>
                 {activeIndex === index && (
-                  <div className="p-2">{faq?.answer}</div>
+                  <div className="px-3">{faq?.answer}</div>
                 )}
               </div>
             </div>

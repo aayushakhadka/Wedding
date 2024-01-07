@@ -5,6 +5,7 @@ import { AiOutlineUpload } from "react-icons/ai";
 import { FiPlus } from "react-icons/fi";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { MdDelete } from "react-icons/md";
 
 export const Memories = () => {
   const { data } = useApiData();
@@ -100,14 +101,14 @@ export const Memories = () => {
                 onChange={handleSetMemories}
                 value={memories.email}
                 name="email"
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem]"
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
               />
             </div>
             <div className="flex flex-col flex-[1] w-full">
               <h1 className="font-display flex p-[0.5rem]">Days</h1>
 
               <select
-                className="min-h-[3.5rem] rounded-[1rem] flex-[1]  pl-[1rem] shadow px-[1rem]  "
+                className="min-h-[3.5rem] rounded-[1rem] flex-[1]  pl-[1rem] shadow px-[1rem] font-display  "
                 onChange={handleSetMemories}
                 value={memories.day}
                 name="day"
@@ -135,14 +136,15 @@ export const Memories = () => {
                         key={index}
                         src={URL.createObjectURL(file)}
                         // style={{ height: "200px", width: "300px" }}
-                        className="flex-[1] object-cover w-72 h-72"
+                        className="flex-[1] object-cover w-72 h-72 font-display mt-[2rem]"
                       />
 
                       <button
-                        className="absolute px-4 mt-5 shadow-lg rounded-lg bg-red-400 text-white z-50 top-0 left-5"
+                        className="absolute px-4 mt-9 py-1 shadow-lg rounded-lg bg-red-400 text-white z-50 top-0 left-5 font-display "
                         onClick={() => handleRemoveImage(index)}
                       >
-                        Remove
+                        <MdDelete />
+
                       </button>
                     </div>
                   ))}
@@ -162,11 +164,11 @@ export const Memories = () => {
                 className="flex flex-col items-center px-4 py-6 w-full bg-white text-gray-700 rounded-[1rem] shadow tracking-wide cursor-pointer"
               >
                 <FiPlus />
-                <span className="text-base leading-normal">Upload Photo</span>
+                <span className="text-base leading-normal font-display">Upload Photo</span>
                 <input
                   onChange={handleSetMemoriesImage}
                   type="file"
-                  className="hidden"
+                  className="hidden font-display"
                   id="file"
                 />
               </label>
@@ -176,7 +178,7 @@ export const Memories = () => {
           <div className="flex items-center justify-center pt-[2.5rem]">
             <button
               onClick={sendMemories}
-              className="font-display h-[3rem] bg-teal-300 px-16 rounded-[1rem] text-white mobileS:w-full"
+              className="font-display h-[3rem] bg-teal-300 px-16 rounded-[1rem] text-white mobileS:w-full "
             >
               {loading ? "Sending..." : "Send"}
             </button>

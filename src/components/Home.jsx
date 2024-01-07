@@ -16,7 +16,7 @@ export const Home = () => {
         <div className="bg-black min-h-screen opacity-70 flex flex-col items-center justify-center">
           <h1
             className="text-white text-4xl font-display pb-[2rem]"
-            data-aos="fade-up"
+            data-aos="zoom-in"
             data-aos-duration="1500"
           >
             {data?.groomName?.split(" ")?.[0]} &{" "}
@@ -24,7 +24,7 @@ export const Home = () => {
           </h1>
           <div className="bg-white tablet:w-[70%] mobileS:w-[100%] laptop1:w-[40%] mobileM:w-[100%] h-[1px] mb-[1rem]"></div>
           <h1
-            data-aos="fade-right"
+            data-aos="zoom-in"
             data-aos-duration="1500"
             className=" flex items-center justify-center text-white tracking-[0.4rem] font-display tablet:text-2xl mobileS:text-sm"
           >

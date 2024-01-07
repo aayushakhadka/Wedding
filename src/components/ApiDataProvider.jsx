@@ -19,7 +19,7 @@ export function ApiDataProvider({ children }) {
     if (eventId) {
       axios
         .get(
-          `${process.env.REACT_APP_BASE_URL}/event/detail/${eventId}?populate=backgrounds&populate=days.image&populate=memories.images&populate=memories.guest&populate=memories.day`
+          `${process.env.REACT_APP_BASE_URL}/event/detail/${eventId}?populate=backgrounds&populate=days.image&populate=memories.images&populate=memories.guest&populate=memories.day&populate=closeFriends.image`
         )
         .then((response) => {
           setApiData({ ...response.data, eventId });

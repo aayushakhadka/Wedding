@@ -13,15 +13,15 @@ export const Rsvp = () => {
     name: "",
     address: "",
     phone: "",
-    message: "",
+    numberOfGuest:"",
   });
+  const [isValid, setIsValid] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const [errors, setErrors] = useState({});
 
   const { eventId } = useApiData();
 
-  console.log(eventId, "event iod");
 
   const inputChange = (event) => {
     const { name, value } = event.target;
@@ -55,7 +55,7 @@ export const Rsvp = () => {
         name: "",
         address: "",
         phone: "",
-        message: "",
+        numberOfGuest:""
       });
     } catch (error) {
       setLoading(false);
@@ -99,6 +99,14 @@ export const Rsvp = () => {
     //     return valid;
 
     //   };
+    // let valid=true;
+    // const newErrors={}
+   
+    // if (!inputValue.phone || inputValue.phone.length <= 10) {
+    //   newErrors.phone = "";
+    //   valid = false;
+    // }
+
   };
 
   return (
@@ -123,7 +131,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="name"
                     value={inputValue.name}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem]"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
                   />
                   {errors.name && (
                     <span className=" flex flex-col text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -133,9 +141,11 @@ export const Rsvp = () => {
                 </div>
 
                 <div className="flex flex-col flex-[1]">
-                  <h1 className="font-display flex p-[0.5rem] text-white">
+                  <h1 className="font-display flex  text-white">
                     Email
                   </h1>
+                  <p className="font-display text-white text-sm font-thin">Enter the same email in every form...</p>
+
 
                   <input
                     type="text"
@@ -143,7 +153,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="email"
                     value={inputValue.email}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem]"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
                   />
                   {errors.email && (
                     <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -176,7 +186,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="address"
                     value={inputValue.address}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem]"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
                   />
                   {errors.address && (
                     <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -195,7 +205,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="phone"
                     value={inputValue.phone}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem]"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
                   />
                   {errors.number && (
                     <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -204,8 +214,26 @@ export const Rsvp = () => {
                   )}
                 </div>
               </div>
-
               <div className="flex items-center justify-center gap-5 flex-wrap ">
+              <div className="flex flex-col flex-[1]">
+                  <h1 className="font-display items-center text-left flex p-[0.5rem] text-white pt-[1rem]">
+                  Number Of Guest
+                  </h1>
+
+                  <input
+                    type="text"
+                    placeholder="Number Of Guest"
+                    name="numberOfGuest"
+                    value={inputValue.numberOfGuest}
+                    onChange={inputChange}
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] text-black pl-[1rem] font-display "
+                  />
+                  </div>
+                  </div>
+
+
+              {/* <div className="flex items-center justify-center gap-5 flex-wrap ">
+             
                 <div className="flex flex-col flex-[1]">
                   <h1 className="font-display items-center text-left flex p-[0.5rem] text-white pt-[1rem]">
                     Message
@@ -217,7 +245,7 @@ export const Rsvp = () => {
                     name="message"
                     value={inputValue.message}
                     onChange={inputChange}
-                    className="min-h-[10rem] rounded-[1rem] min-w-[18rem] flex-[1] text-black pl-[1rem] pb-[6rem] "
+                    className="min-h-[10rem] rounded-[1rem] min-w-[18rem] flex-[1] text-black pl-[1rem] pb-[6rem] font-display "
                   />
                   <div className="flex flex-col">
                     {errors.message && (
@@ -227,7 +255,7 @@ export const Rsvp = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="flex items-center justify-center pt-[3rem] pb-[3rem] ">
                 <button
                   className="text-white bg-teal-800 h-[3rem] w-[15rem] font-display rounded-[1rem] "
