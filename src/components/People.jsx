@@ -26,11 +26,11 @@ export const People = () => {
 
   return (
     <div
-      id="people"
-      className="flex flex-col items-center justify-center pt-[5rem] gap-6"
+      id="contact"
+      className="flex flex-col items-center justify-center pt-[6rem] gap-6"
     >
-      <div className="flex items-center justify-center w-[15rem] border-gray-200 border-[1px] h-[3.5rem] bg-gray-100">
-        <h1 className="font-display">EMERGENCY CONTACT</h1>
+      <div className="flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">
+        <h1 className="font-display text-xl">EMERGENCY CONTACT</h1>
       </div>
       {/* <div className="flex gap-6">
         <button

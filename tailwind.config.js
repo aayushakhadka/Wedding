@@ -23,7 +23,8 @@ module.exports = withMT({
         wedding: "url('./images/wedding.jpg')",
         newlyweds: "url('./images/newlyweds.jpg')",
         marriage:"url('./images/marriage.jpg')",
-        photo:"url('./images/photo.jpeg')"
+        photo:"url('./images/photo.jpeg')",
+        bridesmaid:"url(./images/brides-maid.avif)"
       },
       fontFamily: {
         custom: ["customFont", "cursive"],

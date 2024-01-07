@@ -25,7 +25,7 @@ const Content = () => {
         <Gallery />
         <Faqs />
         <Rsvp />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </div>
     </ApiDataProvider>

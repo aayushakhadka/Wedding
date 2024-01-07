@@ -41,10 +41,10 @@ export const Footer = () => {
         
       </div>
       <div className="flex items-center justify-around mobileS:flex-col mobileM:flex-col tablet:flex-row min-h-[5rem]">
-        <p className="text-black flex mobileS:flex-col mobileM: flex-col tablet:flex-row items-center gap-2 mobileM:pl-[0.7rem] tablet:pl-[0rem]">
+        <p className="text-black flex mobileS:flex-col mobileM: flex-col tablet:flex-row items-center gap-2 mobileM:pl-[0.7rem] tablet:pl-[0rem] font-display">
           Designed & Developed By
           <a className=" " target="_blank" href="https://apptechnologies.co/">
-            <span className=" text-cyan-600 tracking-wide">
+            <span className=" text-cyan-600 tracking-wide font-display">
               App Technologies
             </span>
           </a>

@@ -112,7 +112,7 @@ export const Rsvp = () => {
   return (
     <div id="rsvp">
       <div className=" bg-marriage bg-cover bg-center max-w-full mt-[5rem]">
-        <div className="bg-black opacity-80 max-w-full pt-[3rem] ">
+        <div className="bg-black bg-opacity-80 max-w-full pt-[3rem] ">
           <div className=" w-[100%] flex flex-col items-center pt-[3rem]  ">
             <div className="flex items-center justify-center w-[15rem] h-[3rem] border-2 text-white font-display text-xl">
               <h1 className=" font-display">Join Our Party</h1>
@@ -120,7 +120,7 @@ export const Rsvp = () => {
 
             <Layout style={{ height: "fit-content" }}>
               <div className=" flex flex-row mobileS:flex-col items-center justify-center pt-[3rem] gap-5 mobileM:flex-col">
-                <div className="flex flex-col flex-[1]">
+                <div className="flex flex-col flex-[1] w-full">
                   <h1 className="font-display flex p-[0.5rem] text-white">
                     Name
                   </h1>
@@ -131,7 +131,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="name"
                     value={inputValue.name}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
                   />
                   {errors.name && (
                     <span className=" flex flex-col text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -140,11 +140,11 @@ export const Rsvp = () => {
                   )}
                 </div>
 
-                <div className="flex flex-col flex-[1]">
+                <div className="flex flex-col flex-[1] w-full">
                   <h1 className="font-display flex  text-white">
                     Email
                   </h1>
-                  <p className="font-display text-white text-sm font-thin">Enter the same email in every form...</p>
+                  <p className="font-display text-white text-[12px] font-thin">Enter the same email in every form...</p>
 
 
                   <input
@@ -153,7 +153,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="email"
                     value={inputValue.email}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
                   />
                   {errors.email && (
                     <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -176,7 +176,7 @@ export const Rsvp = () => {
                   <option>Wedding ceremony</option>
                   <option>Reception Party</option>
                 </select> */}
-                <div className="flex flex-col flex-[1]">
+                <div className="flex flex-col flex-[1] w-full">
                   <h1 className="font-display flex p-[0.5rem] text-white">
                     Address
                   </h1>
@@ -186,7 +186,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="address"
                     value={inputValue.address}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] pl-[1rem] font-display"
                   />
                   {errors.address && (
                     <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">
@@ -194,7 +194,7 @@ export const Rsvp = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex flex-col flex-[1]">
+                <div className="flex flex-col flex-[1] w-full">
                   <h1 className="font-display flex p-[0.5rem] text-white">
                     Phone Number
                   </h1>
@@ -205,7 +205,7 @@ export const Rsvp = () => {
                     onChange={inputChange}
                     name="phone"
                     value={inputValue.phone}
-                    className="min-h-[3.5rem] rounded-[1rem] flex-[1] min-w-[18rem] pl-[1rem] font-display"
+                    className="min-h-[3.5rem] rounded-[1rem] flex-[1]  pl-[1rem] font-display"
                   />
                   {errors.number && (
                     <span className="text-red-600 text-left text-5xl font-display text-[0.7rem] ">

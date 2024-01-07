@@ -15,14 +15,15 @@ export const Home = () => {
       >
         <div className="bg-black min-h-screen opacity-70 flex flex-col items-center justify-center">
           <h1
-            className="text-white text-4xl font-display pb-[2rem]"
+            className="text-white text-4xl mobileS:text-2xl mobileM:text-2xl font-display pb-[2rem]"
             data-aos="zoom-in"
             data-aos-duration="1500"
           >
+            
             {data?.groomName?.split(" ")?.[0]} &{" "}
             {data?.brideName?.split(" ")?.[0]}
           </h1>
-          <div className="bg-white tablet:w-[70%] mobileS:w-[100%] laptop1:w-[40%] mobileM:w-[100%] h-[1px] mb-[1rem]"></div>
+          <div className="bg-white tablet:w-[70%] laptop1:w-[40%] mobileM:w-[100%] h-[1px] mb-[1rem] flex"></div>
           <h1
             data-aos="zoom-in"
             data-aos-duration="1500"
@@ -30,7 +31,7 @@ export const Home = () => {
           >
             WE'RE GETTING MARRIED
           </h1>
-          <div className="bg-white tablet:w-[70%] mobileS:w-[100%] mobileM:w-[100%] laptop1:w-[40%] h-[1px] mt-[1rem] flex"></div>
+          <div className="bg-white tablet:w-[70%] mobileM:w-[100%] laptop1:w-[40%] h-[1px] mt-[1rem] flex"></div>
         </div>
       </div>
     </div>
