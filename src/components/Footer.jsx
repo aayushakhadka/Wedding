@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <div>
       <div className=" bg-photo bg-cover max-w-full">
-        <div className="bg-black bg-opacity-70 p-[4rem]">
+        <div className="bg-black opacity-70 p-[4rem]">
           <div className=" flex flex-col justify-center items-center gap-8">
             <h1 className="text-white text-5xl font-display text-center tracking-wide ">
               Share your memories

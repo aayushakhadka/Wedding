@@ -14,7 +14,8 @@ export const People = () => {
   const contact=data?.closeFriends.map((friend)=>({
     image:friend?.image?.image?.fileUrl,
     name:friend?.name,
-    relation:friend?.relation
+    relation:friend?.relation,
+    phone:friend?.phone
   }))
 
   useEffect(() => {
@@ -50,20 +51,26 @@ export const People = () => {
         <div className="grid laptop1:grid-cols-3 gap-7 pt-[3rem] tablet:grid-cols-2">
           {contact?.map((friend, index) => {
             return (
-              <div className="group">
-                <div className=" overflow-hidden rounded-t-[1rem]">
+              <div className="group  border-gray-400 border-[1px] shadow-md  "
+              data-aos='zoom-in'
+              data-aos-duration='1500'>
+                <div className=" overflow-hidden  ">
                   <img
-                    className="group-hover:scale-125 duration-150 rounded-t-[1rem] contrast-75 group-hover:contrast-125"
+                    className="group-hover:scale-125 duration-150 group-hover:border-red-400 group-hover:rounded-t-[1rem] contrast-75 group-hover:contrast-125 w-full h-[20rem]"
                     src={friend?.image}
                   />
                 </div>
-                <div className="h-[8rem] flex flex-col items-center justify-center bg-gray-400 rounded-b-[1rem]">
-                  <h1 className=" font-display text-black ">{people?.name}</h1>
-                  <h1 className="font-display text-black tracking-[0.1px]">
+                <div className="p-[1.2rem] border-gray-400 border-b-[1px] ">
+                  <h1 className="flex font-display tracking-[1px] leading-7">Name: {friend?.name}</h1>
+                 
+                  {/* <h1 className="font-display text-black tracking-[0.1px]">
                     {friend?.name}
+                  </h1> */}
+                  <h1 className="font-display text-black tracking-[1px] leading-7">
+                    Desgination: {friend?.relation}
                   </h1>
-                  <h1 className="font-display text-black tracking-[0.1px]">
-                    {friend?.relation}
+                  <h1 className="font-display text-black tracking-[1px] leading-7">
+                    Number: {friend?.phone}
                   </h1>
                 </div>
               </div>
