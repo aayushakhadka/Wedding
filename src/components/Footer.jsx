@@ -11,7 +11,7 @@ export const Footer = () => {
   const { eventId } = useApiData();
 
   const [qrValue, setQrValue] = useState(""); // State to store the QR code value
-
+console.log(window.location,'location')
   const handleChange = (e) => {
     setQrValue(e.target.value); // Update the QR code value on input change
   };
@@ -30,7 +30,7 @@ export const Footer = () => {
             <div className="flex ">
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <QRCode
-                  value={`${process.env.REACT_APP_F_BASE_URL}/memories/${eventId}`}
+                  value={`${window.location.host}/memories/${eventId}`}
                   size={200}
                 />
               </div>

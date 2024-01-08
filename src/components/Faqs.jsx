@@ -22,7 +22,7 @@ export const Faqs = () => {
     setActiveIndex(index === activeIndex ? null : index);
   };
   return (
-    <div id="faqs" style={{ marginBottom: "3rem" }}>
+    <div id="faqs" style={{ marginBottom: "5rem" }}>
       <Layout style={{ height: "fit-content" }}>
         <div className="flex items-center justify-center pt-[6rem] ">
           <h1 className="font-display text-xl flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">
@@ -63,7 +63,7 @@ export const Faqs = () => {
                 </div>
                 {activeIndex === index && (
                   <div>
-                    <hr
+                    <hr className="mobileS:hidden mobileM:hidden"
                       style={{ borderColor: "#000", margin: "0px 14px 14px" }}
                     ></hr>
                     <div className="tablet:px-3 mobileS:pt-2 mobileM:pt-2">
