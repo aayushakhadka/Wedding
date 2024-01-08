@@ -109,14 +109,14 @@ export const Nav = () => {
               <a href={"#gallery"}>
                 <h1 className=" font-display">GALLERY</h1>
               </a>
-
+              <a href={"#rsvp"}>
+                <h1 className=" font-display">RSVP</h1>
+              </a>
               <a href={"#faqs"}>
                 <h1 className=" font-display">FAQS</h1>
               </a>
 
-              <a href={"#rsvp"}>
-                <h1 className=" font-display">RSVP</h1>
-              </a>
+             
             </Typography>
           </Drawer>
         </React.Fragment>

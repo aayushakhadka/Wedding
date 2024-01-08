@@ -37,7 +37,7 @@ export const Faqs = () => {
                 className=" rounded mb-2 p-3 border-[1px] border-gray-400"
               >
                 <div
-                  className="flex justify-between items-center tablet:px-3 tablet:p-3 tablet:pt-4"
+                  className="flex justify-between items-center tablet:px-3 tablet:p-3 tablet:pt-4 cursor-pointer"
                   onClick={() => handleClick(index)}
                 >
                   <h2
@@ -62,7 +62,7 @@ export const Faqs = () => {
                   </div>
                 </div>
                 {activeIndex === index && (
-                  <div>
+                  <div className="cursor-pointer">
                     <hr className="mobileS:hidden mobileM:hidden"
                       style={{ borderColor: "#000", margin: "0px 14px 14px" }}
                     ></hr>
