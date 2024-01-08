@@ -23,8 +23,8 @@ const Content = () => {
         <Event />
         <People />
         <Gallery />
-        <Faqs />
         <Rsvp />
+        <Faqs />
         {/* <Contact /> */}
         <Footer />
       </div>

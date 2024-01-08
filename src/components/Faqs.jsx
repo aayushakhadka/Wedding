@@ -22,7 +22,7 @@ export const Faqs = () => {
     setActiveIndex(index === activeIndex ? null : index);
   };
   return (
-    <div id="faqs">
+    <div id="faqs" style={{ marginBottom: "3rem" }}>
       <Layout style={{ height: "fit-content" }}>
         <div className="flex items-center justify-center pt-[6rem] ">
           <h1 className="font-display text-xl flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">
@@ -40,13 +40,15 @@ export const Faqs = () => {
                   className="flex justify-between items-center tablet:px-3 tablet:p-3 tablet:pt-4"
                   onClick={() => handleClick(index)}
                 >
-                  <h2 className="text-lg font-medium tablet:w-11/12">
+                  <h2
+                    className="text-lg font-medium tablet:w-11/12"
+                    style={{ fontWeight: "600" }}
+                  >
                     {faq?.question}
                   </h2>
 
                   <div className="w-[3rem] h-auto text-center">
                     {activeIndex === index ? (
-                     
                       <MdKeyboardArrowDown
                         className="mobileS:hidden mobileM:hidden text-xl"
                         size={25}
@@ -60,7 +62,14 @@ export const Faqs = () => {
                   </div>
                 </div>
                 {activeIndex === index && (
-                  <div className="tablet:px-3 mobileS:pt-2 mobileM:pt-2">{faq?.answer}</div>
+                  <div>
+                    <hr
+                      style={{ borderColor: "#000", margin: "0px 14px 14px" }}
+                    ></hr>
+                    <div className="tablet:px-3 mobileS:pt-2 mobileM:pt-2">
+                      {faq?.answer}
+                    </div>
+                  </div>
                 )}
               </div>
             </div>

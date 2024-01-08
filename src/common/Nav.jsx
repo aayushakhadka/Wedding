@@ -45,22 +45,19 @@ export const Nav = () => {
             PEOPLE
           </h1>
           </a> */}
-           
-           <a href={"#contact"}>
+
+              <a href={"#contact"}>
                 <h1 className=" font-display">CONTACT</h1>
               </a>
               <a href={"#gallery"}>
                 <h1 className=" font-display">GALLERY</h1>
               </a>
-              
-              <a href={"#faqs"}>
-                <h1 className=" font-display">FAQS</h1>
-              </a>
-
               <a href={"#rsvp"}>
                 <h1 className=" font-display">RSVP</h1>
               </a>
-
+              <a href={"#faqs"}>
+                <h1 className=" font-display">FAQS</h1>
+              </a>
             </div>
           </div>
         </Layout>
@@ -120,7 +117,6 @@ export const Nav = () => {
               <a href={"#rsvp"}>
                 <h1 className=" font-display">RSVP</h1>
               </a>
-             
             </Typography>
           </Drawer>
         </React.Fragment>

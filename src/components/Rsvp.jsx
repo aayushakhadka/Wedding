@@ -216,12 +216,12 @@ export const Rsvp = () => {
               <div className="flex items-center justify-center gap-5 flex-wrap ">
               <div className="flex flex-col flex-[1]">
                   <h1 className="font-display items-center text-left flex p-[0.5rem] text-white pt-[1rem]">
-                  Number Of Guest
+                  Number Of Member
                   </h1>
 
                   <input
-                    type="text"
-                    placeholder="Number Of Guest"
+                    type="number"
+                    placeholder="Number Of Member"
                     name="numberOfGuest"
                     value={inputValue.numberOfGuest}
                     onChange={inputChange}

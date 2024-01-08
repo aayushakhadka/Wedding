@@ -27,25 +27,26 @@ export const Footer = () => {
             {/* <h3 className="text-white font-display ">
               -Mick[The Groom]
             </h3> */}
-              <div className="flex ">
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <QRCode
-              value={`${process.env.REACT_APP_F_BASE_URL}/memories/${eventId}`}
-              size={200}
-            />
+            <div className="flex ">
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <QRCode
+                  value={`${process.env.REACT_APP_F_BASE_URL}/memories/${eventId}`}
+                  size={200}
+                />
+              </div>
+            </div>
           </div>
         </div>
-          </div>
-        
-        </div>
-        
       </div>
       <div className="flex items-center justify-around mobileS:flex-col mobileM:flex-col tablet:flex-row min-h-[5rem]">
-        <p className="text-black flex mobileS:flex-col mobileM: flex-col tablet:flex-row items-center gap-2 mobileM:pl-[0.7rem] tablet:pl-[0rem] font-display">
+        <p
+          className="text-black flex mobileS:flex-col mobileM: flex-col tablet:flex-row items-center gap-2 mobileM:pl-[0.7rem] tablet:pl-[0rem] font-display"
+          style={{ lineHeight: "1", padding: "15px 0px" }}
+        >
           Designed & Developed By
           <a className=" " target="_blank" href="https://apptechnologies.co/">
             <span className=" text-cyan-600 tracking-wide font-display">
-              App Technologies
+              APP TECHNOLOGIES PVT LTD
             </span>
           </a>
         </p>
