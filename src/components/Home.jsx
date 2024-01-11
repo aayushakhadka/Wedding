@@ -11,9 +11,9 @@ export const Home = () => {
     <div id="home">
       <div
         // style={{ backgroundImage: (`${bgUrl}`) }}
-        className="bg-image bg-cover bg-center min-h-screen min-w-full"
+        className=" bg-weddingbg bg-cover bg-center min-h-screen min-w-full"
       >
-        <div className="bg-black min-h-screen bg-opacity-70 flex flex-col items-center justify-center">
+        <div className="bg-black min-h-screen bg-opacity-50 flex flex-col items-center justify-center">
           <h1
             className="text-white text-4xl mobileS:text-2xl mobileM:text-2xl font-display pb-[2rem]"
             data-aos="zoom-in"

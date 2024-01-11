@@ -20,11 +20,12 @@ module.exports = withMT({
         bride: "url('./images/bride.jpg')",
         bird: "url('./images/bird.png')",
         couple: "url('./images/couple.jpg')",
-        wedding: "url('./images/wedding.jpg')",
+        // wedding: "url('./images/wedding.jpg')",
         newlyweds: "url('./images/newlyweds.jpg')",
         marriage:"url('./images/marriage.jpg')",
         photo:"url('./images/photo.jpeg')",
-        bridesmaid:"url(./images/brides-maid.avif)"
+        bridesmaid:"url(./images/brides-maid.avif)",
+        weddingbg:"url('./images/wedding-bg.jpg')"
       },
       fontFamily: {
         custom: ["customFont", "cursive"],

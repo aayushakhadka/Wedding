@@ -75,90 +75,98 @@ export const Gallery = () => {
   };
 
   return (
-    <div
-      id="gallery"
-      className="flex flex-col items-center justify-center pt-[6rem] gap-6"
-    >
-      <div className="flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">
-        <h1 className="font-display text-xl">OUR GALLERY</h1>
-      </div>
-
-      <div className=" flex mobileS:flex-col  mobileS: pt-[1rem] gap-2 font-display text-left items-baseline justify-start">
-        <button
-          className={`bg-gray-300 w-[3rem] h-[2.5rem] border-[1px] rounded-[1rem] ${
-            type === "all"
-              ? "bg-teal-300 text-white"
-              : " text-black bg-gray-300"
-          }`}
-          onClick={() => setType("all")}
+    <>
+      {data?.memories?.length >= 1 && (
+        <div
+          id="gallery"
+          className="flex flex-col items-center justify-center pt-[6rem] gap-6"
         >
-          ALL
-        </button>
-        {daysTitle?.map((title, index) => {
-          return (
+          <div className="flex items-center justify-center w-[15rem] border-gray-400 border-[1px] h-[3.5rem]">
+            <h1 className="font-display text-xl">OUR GALLERY</h1>
+          </div>
+
+          <div className=" flex mobileS:flex-col  mobileS: pt-[1rem] gap-2 font-display text-left items-baseline justify-start">
             <button
-              key={index}
-              className={`px-3 border-[1px] rounded-[1rem]  h-[2.5rem]  ${
-                type === title
-                  ? " text-white bg-teal-300"
+              className={`bg-gray-300 w-[3rem] h-[2.5rem] border-[1px] rounded-[1rem] ${
+                type === "all"
+                  ? "bg-teal-300 text-white"
                   : " text-black bg-gray-300"
               }`}
-              onClick={() => setType(title)}
+              onClick={() => setType("all")}
             >
-              {title}
+              ALL
             </button>
-          );
-        })}
-      </div>
+            {daysTitle?.map((title, index) => {
+              return (
+                <button
+                  key={index}
+                  className={`px-3 border-[1px] rounded-[1rem]  h-[2.5rem]  ${
+                    type === title
+                      ? " text-white bg-teal-300"
+                      : " text-black bg-gray-300"
+                  }`}
+                  onClick={() => setType(title)}
+                >
+                  {title}
+                </button>
+              );
+            })}
+          </div>
 
-      <div className="grid mobileS:grid-cols-1 mobileM:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 pt-[1rem] gap-3 w-[80%] flex-wrap">
-        {memories?.map((gallery, index) => {
-          return (
-            <div
-              key={index}
-              className=" flex flex-[1] w-full items-center justify-center relative"
-            >
-              <Slider {...settings} className="slider">
-                {gallery?.img?.map((img, index) => {
-                  return (
-                    <div key={index} className="">
-                      {img?.image?.fileUrl?.split(".")?.[
-                        img?.image?.fileUrl?.split(".")?.length - 1
-                      ] === "mp4" ? (
-                        <div
-                          className=" w-full"
-                          onMouseEnter={() => setShowControls(true)}
-                          onMouseLeave={() => setShowControls(false)}
-                        >
-                          <video className="w-full" autoPlay={true} loop={true}>
-                            <source
+          <div className="grid mobileS:grid-cols-1 mobileM:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 pt-[1rem] gap-3 w-[80%] flex-wrap">
+            {memories?.map((gallery, index) => {
+              return (
+                <div
+                  key={index}
+                  className=" flex flex-[1] w-full items-center justify-center relative"
+                >
+                  <Slider {...settings} className="slider">
+                    {gallery?.img?.map((img, index) => {
+                      return (
+                        <div key={index} className="">
+                          {img?.image?.fileUrl?.split(".")?.[
+                            img?.image?.fileUrl?.split(".")?.length - 1
+                          ] === "mp4" ? (
+                            <div
+                              className=" w-full"
+                              onMouseEnter={() => setShowControls(true)}
+                              onMouseLeave={() => setShowControls(false)}
+                            >
+                              <video
+                                className="w-full"
+                                autoPlay={true}
+                                loop={true}
+                              >
+                                <source
+                                  src={img?.image?.fileUrl}
+                                  type="video/mp4"
+                                />
+                              </video>
+                            </div>
+                          ) : (
+                            <img
+                              className="w-full h-96 object-contain grid grid-cols-2"
                               src={img?.image?.fileUrl}
-                              type="video/mp4"
                             />
-                          </video>
+                          )}
                         </div>
-                      ) : (
-                        <img
-                          className="w-full h-96 object-contain grid grid-cols-2"
-                          src={img?.image?.fileUrl}
-                        />
-                      )}
+                      );
+                    })}
+                  </Slider>
+                  <div className="absolute flex bg-gray-200 flex-col items-center justify-center bottom-0 w-full opacity-100 p-[0.5rem]">
+                    <div className=" text-black px-[1rem] font-display text-sm  ">
+                      Posted By: {gallery?.by}
                     </div>
-                  );
-                })}
-              </Slider>
-              <div className="absolute flex bg-gray-200 flex-col items-center justify-center bottom-0 w-full opacity-100 p-[0.5rem]">
-                <div className=" text-black px-[1rem] font-display text-sm  ">
-                  Posted By: {gallery?.by}
+                    <div className=" text-black px-[1rem] font-display text-sm ">
+                      Event: {gallery?.event}
+                    </div>
+                  </div>
                 </div>
-                <div className=" text-black px-[1rem] font-display text-sm ">
-                  Event: {gallery?.event}
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
