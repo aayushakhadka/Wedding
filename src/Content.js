@@ -10,6 +10,7 @@ import { Rsvp } from "./components/Rsvp";
 import { Footer } from "./components/Footer";
 import { Faqs } from "./components/Faqs";
 import { Contact } from "./components/Contact";
+import { VisaLink } from "./components/VisaLink";
 
 const Content = () => {
   return (
@@ -22,6 +23,7 @@ const Content = () => {
         {/* <Story /> */}
         <Event />
         <People />
+        <VisaLink />
         <Gallery />
         <Rsvp />
         <Faqs />
