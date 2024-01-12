@@ -17,7 +17,6 @@ export const Event = () => {
     paragraph: day?.description,
   }));
 
-
   const peopleData = people;
 
   const [gender, setGender] = useState("male");
@@ -27,7 +26,6 @@ export const Event = () => {
     const data = peopleData.filter((item) => item.gender === gender);
     setFilteredPeople(data);
   }, [gender]);
-
 
   return (
     <div
@@ -39,8 +37,12 @@ export const Event = () => {
       </div>
       <Layout style={{ height: "fit-content" }}>
         {days?.map((event, index) => {
+          console.log(event, "event");
           return (
-            <div key={index} className=" flex tablet:flex-row mobileS:flex-col mobileM:flex-col gap-5 pt-[3rem] items-center justify-center ">
+            <div
+              key={index}
+              className=" flex tablet:flex-row mobileS:flex-col mobileM:flex-col gap-5 pt-[3rem] items-center justify-center "
+            >
               <img
                 data-aos="fade-right"
                 data-aos-duration="1500"
@@ -60,10 +62,10 @@ export const Event = () => {
                 </h1>
                 <div className="flex items-center gap-3">
                   <h1 className="font-display text-sm text-gray-800">
-                    {moment(event?.time).format("YYYY-MM-DD")}
+                    {moment.utc(event?.time).format("YYYY-MM-DD")}
                   </h1>
                   <h1 className="font-display text-sm text-gray-800">
-                    {moment(event?.time).format("HH:mm A")}
+                    {moment.utc(event?.time).format("h:mm A")}
                   </h1>
                 </div>
                 <h1 className="font-display pt-[1rem] max-w-[30rem] text-gray-800">
